@@ -2,9 +2,9 @@
 
 namespace Porifa\Jarason\Console\Commands;
 
-use Illuminate\Console\Command;
+use Illuminate\Console\GeneratorCommand;
 
-class JarasonCommand extends Command
+class JarasonMakeCommand extends GeneratorCommand
 {
     public $signature = 'Jarason';
 
@@ -15,5 +15,10 @@ class JarasonCommand extends Command
         $this->comment('All done');
 
         return self::SUCCESS;
+    }
+
+    protected function getStub(): string
+    {
+        return '';
     }
 }
