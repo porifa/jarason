@@ -1,0 +1,7 @@
+preset: laravel
+version: 8.1
+enabled:
+  - single_trait_insert_per_statement
+  - concat_with_spaces
+disabled:
+  - concat_without_spaces
