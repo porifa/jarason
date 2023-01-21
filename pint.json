@@ -1,7 +1,7 @@
 {
     "preset": "laravel",
     "rules": {
-        "concat_space": {},
+        "concat_space": { "spacing": "one" },
         "single_trait_insert_per_statement": true
     }
 }

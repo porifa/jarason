@@ -34,8 +34,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Porifa\\Jarason\\": "src",
-            "Porifa\\Jarason\\Database\\Factories\\": "database/factories"
+            "Porifa\\Jarason\\": "src"
         }
     },
     "autoload-dev": {
@@ -60,10 +59,7 @@
         "laravel": {
             "providers": [
                 "Porifa\\Jarason\\JarasonServiceProvider"
-            ],
-            "aliases": {
-                "Jarason": "Porifa\\Jarason\\Facades\\Jarason"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",

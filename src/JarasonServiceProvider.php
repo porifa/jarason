@@ -4,7 +4,6 @@ namespace Porifa\Jarason;
 
 use Porifa\LaravelPackageKit\Package;
 use Porifa\LaravelPackageKit\PackageServiceProvider;
-use Porifa\Jarason\Console\Commands\JarasonCommand;
 
 class JarasonServiceProvider extends PackageServiceProvider
 {
@@ -16,7 +15,7 @@ class JarasonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/porifa/laravel-package-kit
          */
         $package
-            ->name('laravel-cool-package')
+            ->name('jarason')
             ->hasConfigFiles()
             ->hasMigrations('create_cool_package_table')
             ->hasCommands(JarasonCommand::class);

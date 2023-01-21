@@ -1,6 +1,4 @@
-
-
-# Laravel Json API Response to Object Mapper
+# Laravel JSON API Response to Object Mapper
 
 [![Stable Version](https://img.shields.io/packagist/v/porifa/jarason.svg?style=flat)](https://packagist.org/packages/porifa/jarason)
 [![GitHub Tests Action Status](<https://img.shields.io/github/actions/workflow/status/porifa/jarason/pest.yml?label=Tests%20(Pest)>)](https://github.com/porifa/jarason/actions?query=workflow%3Apest+branch%3Amain)
@@ -22,18 +20,6 @@ You can install the package via composer:
 composer require porifa/jarason
 ```
 
-You can publish the migrations with:
-
-```bash
-php artisan vendor:publish --tag="jarason-migrations"
-```
-
-Now run the migrations with:
-
-```bash
-php artisan migrate
-```
-
 You can publish the config file with:
 
 ```bash
@@ -45,12 +31,6 @@ This is the contents of the published config file:
 ```php
 return [
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="jarason-views"
 ```
 
 ## Usage
