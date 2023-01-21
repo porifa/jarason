@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\YourPackageName\Contracts;
+namespace Porifa\Jarason\Contracts;
 
 interface SomethingableInterface
 {

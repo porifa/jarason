@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\YourPackageName;
+namespace Porifa\Jarason;
 
 use Porifa\LaravelPackageKit\Package;
 use Porifa\LaravelPackageKit\PackageServiceProvider;
-use VendorName\YourPackageName\Console\Commands\YourPackageNameCommand;
+use Porifa\Jarason\Console\Commands\JarasonCommand;
 
-class YourPackageNameServiceProvider extends PackageServiceProvider
+class JarasonServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -19,6 +19,6 @@ class YourPackageNameServiceProvider extends PackageServiceProvider
             ->name('laravel-cool-package')
             ->hasConfigFiles()
             ->hasMigrations('create_cool_package_table')
-            ->hasCommands(YourPackageNameCommand::class);
+            ->hasCommands(JarasonCommand::class);
     }
 }

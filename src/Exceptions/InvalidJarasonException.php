@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\YourPackageName\Exceptions;
+namespace Porifa\Jarason\Exceptions;
 
 use Exception;
 

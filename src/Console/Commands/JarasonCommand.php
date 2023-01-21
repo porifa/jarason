@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\YourPackageName\Console\Commands;
+namespace Porifa\Jarason\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class YourPackageNameCommand extends Command
+class JarasonCommand extends Command
 {
-    public $signature = 'YourPackageName';
+    public $signature = 'Jarason';
 
     public $description = 'My command';
 
