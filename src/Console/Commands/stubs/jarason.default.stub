@@ -1,0 +1,12 @@
+<?php
+
+namespace {{ namespace }};
+
+use Porifa\Jarason\Jarason as BaseJarason;
+
+abstract class {{ class }} extends BaseJarason
+{
+    /**
+     * This is base Class For All Jarasons,
+     */
+}
