@@ -1,0 +1,11 @@
+<?php
+
+namespace {{ namespace }};
+use {{ rootNamespace }}Jarasons\Jarason;
+
+class {{ class }} extends Jarason
+{
+    /**
+     * This is {{ class }} Jarason Class similar to Model
+     */
+}
