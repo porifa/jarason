@@ -45,7 +45,6 @@ class JarasonMakeCommand extends GeneratorCommand
     /**
      * Execute the console command.
      *
-     * @return bool|null
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      *
@@ -89,9 +88,7 @@ class JarasonMakeCommand extends GeneratorCommand
     /**
      * Build the class with the given name.
      *
-     * @param  string  $name
      * @param $isInterface
-     * @return string
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
@@ -104,10 +101,6 @@ class JarasonMakeCommand extends GeneratorCommand
         return $this->replaceNamespace($stub, $name)->replaceClass($stub, $name);
     }
 
-    /**
-     * @param $rootNamespace
-     * @return string
-     */
     protected function getDefaultNamespace($rootNamespace): string
     {
         return $rootNamespace . '\Jarasons';

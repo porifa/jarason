@@ -98,7 +98,6 @@ trait InteractWithAttributes
      *
      * @param  string  $key
      * @param  mixed  $value
-     * @return mixed
      */
     protected function transformJarasonValue($key, $value): mixed
     {
