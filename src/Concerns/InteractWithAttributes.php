@@ -31,12 +31,11 @@ trait InteractWithAttributes
      * @param  string  $key
      * @return mixed
      */
-    public function getAttribute($key)
+    protected function getAttribute($key)
     {
         if (! $key) {
             return;
         }
-
         // If the attribute exists in the attribute array or has a "get" mutator we will
         // get the attribute's value. Otherwise, we will proceed as if the developers
         // are asking for a relationship's value. This covers both types of values.
@@ -58,7 +57,7 @@ trait InteractWithAttributes
      * @param  string  $key
      * @return mixed
      */
-    public function getAttributeValue($key)
+    protected function getAttributeValue($key)
     {
         return $this->transformJarasonValue($key, $this->getAttributeFromArray($key));
     }
@@ -79,9 +78,19 @@ trait InteractWithAttributes
      *
      * @return array
      */
-    public function getAttributes()
+    protected function getAttributes()
     {
         return $this->attributes;
+    }
+
+    /**
+     * Get all of the current attributes on the model.
+     *
+     * @return array
+     */
+    protected function setAttributes(array $attributes)
+    {
+        return $this->attributes = $attributes;
     }
 
     /**

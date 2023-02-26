@@ -2,7 +2,6 @@
 
 namespace Porifa\Jarason;
 
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
 use Porifa\Jarason\Concerns\InteractWithAttributes;
 
@@ -17,39 +16,45 @@ abstract class Jarason
      */
     protected $type;
 
-    /**
-     * The instance itself
-     *
-     * @var static
-     */
-    private static $instance;
+    public string|int|null $id;
 
-    public function __construct()
+    protected function __construct(string|int|null $id = null, array $attributes = [])
     {
+        $this->id = $id;
+        $this->setAttributes($attributes);
         $this->setType($this->getType());
     }
 
-    public static function all()
+    public static function create(array $attributes)
+    {
+        return static::request()->create($attributes);
+    }
+
+    public static function all($columns = ['*'])
+    {
+        return static::request()->get(is_array($columns) ? $columns : func_get_args());
+    }
+
+    protected static function get($columns = ['*'])
     {
         return static::request();
     }
 
-    public static function request()
+    public static function one(mixed $id, $columns = ['*'])
+    {
+        $response = static::request()->one($id, is_array($columns) ? $columns : [$columns]);
+
+        return new static($response->id(),$response->attributes());
+    }
+
+    public static function request(): Request
     {
         return (new static)->newRequest();
     }
 
     protected function newRequest()
     {
-        $response = Http::withHeaders([
-            config('jarason.headers'),
-        ])->get(config('jarason.base_path') . config('jarason.version') . '/' . $this->type . '/1');
-
-        if ($response->successful()) {
-            $this->attributes = $response->json('data')['attributes'] ?? [];
-        }
-
-        return $this;
+        return new Request($this->type);
     }
 
     /**
@@ -78,10 +83,5 @@ abstract class Jarason
     public function __get($key)
     {
         return $this->getAttribute($key);
-    }
-
-    public static function __callStatic($method, $arguments)
-    {
-        return (new static)->$method(...$arguments);
     }
 }
