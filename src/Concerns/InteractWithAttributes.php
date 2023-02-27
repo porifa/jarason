@@ -27,11 +27,8 @@ trait InteractWithAttributes
 
     /**
      * Get an attribute from the model.
-     *
-     * @param  string  $key
-     * @return mixed
      */
-    protected function getAttribute($key)
+    protected function getAttribute(string $key): mixed
     {
         if (! $key) {
             return;
@@ -49,57 +46,46 @@ trait InteractWithAttributes
         if (method_exists(self::class, $key)) {
             return null;
         }
+
+        return '';
     }
 
     /**
      * Get a plain attribute (not a relationship).
-     *
-     * @param  string  $key
-     * @return mixed
      */
-    protected function getAttributeValue($key)
+    protected function getAttributeValue(string $key): mixed
     {
         return $this->transformJarasonValue($key, $this->getAttributeFromArray($key));
     }
 
     /**
      * Get an attribute from the $attributes array.
-     *
-     * @param  string  $key
-     * @return mixed
      */
-    protected function getAttributeFromArray($key)
+    protected function getAttributeFromArray(string $key): mixed
     {
         return $this->getAttributes()[$key] ?? null;
     }
 
     /**
      * Get all of the current attributes on the model.
-     *
-     * @return array
      */
-    protected function getAttributes()
+    protected function getAttributes(): array
     {
         return $this->attributes;
     }
 
     /**
      * Get all of the current attributes on the model.
-     *
-     * @return array
      */
-    protected function setAttributes(array $attributes)
+    protected function setAttributes(array $attributes): array
     {
         return $this->attributes = $attributes;
     }
 
     /**
      * Transform a raw model value using mutators, casts, etc.
-     *
-     * @param  string  $key
-     * @param  mixed  $value
      */
-    protected function transformJarasonValue($key, $value): mixed
+    protected function transformJarasonValue(string $key, mixed $value): mixed
     {
         return $value;
     }

@@ -14,11 +14,11 @@ abstract class Jarason
      *
      * @var string
      */
-    protected $type;
+    protected string|null $type;
 
     public string|int|null $id;
 
-    protected function __construct(string|int|null $id = null, array $attributes = [])
+    final protected function __construct(string|int|null $id = null, array $attributes = [])
     {
         $this->id = $id;
         $this->setAttributes($attributes);
