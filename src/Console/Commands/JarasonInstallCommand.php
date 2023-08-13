@@ -50,7 +50,7 @@ class JarasonInstallCommand extends GeneratorCommand
      *
      * @see \Illuminate\Console\GeneratorCommand
      */
-    public function handle(): bool|null
+    public function handle(): ?bool
     {
         if ($this->isReservedName($this->getBaseJarasonName())) {
             $this->error('The name "' . $this->getBaseJarasonName() . '" is reserved by PHP.');

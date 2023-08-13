@@ -36,7 +36,7 @@ class Request
         dd($attributes, $kmas);
     }
 
-    protected function send(RequestType $requestType, array|string|null $query = null): JarasonResponse
+    protected function send(RequestType $requestType, array|string $query = null): JarasonResponse
     {
         $response = Http::withHeaders(config('jarason.headers'))->{$requestType->value}($this->getUrl(), $query);
 

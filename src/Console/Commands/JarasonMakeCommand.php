@@ -50,7 +50,7 @@ class JarasonMakeCommand extends GeneratorCommand
      *
      * @see \Illuminate\Console\GeneratorCommand
      */
-    public function handle(): bool|null
+    public function handle(): ?bool
     {
         if ($this->isReservedName($this->getNameInput())) {
             $this->error('The name "' . $this->getNameInput() . '" is reserved by PHP.');
