@@ -11,8 +11,6 @@ abstract class Jarason
 
     /**
      * The type associated with the jarason.
-     *
-     * @var string
      */
     protected ?string $type;
 
