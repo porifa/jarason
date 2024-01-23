@@ -16,7 +16,7 @@ abstract class Jarason
 
     public string|int|null $id;
 
-    final protected function __construct(string|int $id = null, array $attributes = [])
+    final protected function __construct(string|int|null $id = null, array $attributes = [])
     {
         $this->id = $id;
         $this->setAttributes($attributes);

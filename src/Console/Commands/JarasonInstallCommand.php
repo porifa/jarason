@@ -88,7 +88,7 @@ class JarasonInstallCommand extends GeneratorCommand
     /**
      * Build the class with the given name.
      *
-     * @param $isInterface
+     * @param  $isInterface
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
