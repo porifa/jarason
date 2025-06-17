@@ -6,9 +6,7 @@ use Illuminate\Http\Client\Response as ClientResponse;
 
 class Response
 {
-    public function __construct(public ClientResponse $apiResponse)
-    {
-    }
+    public function __construct(public ClientResponse $apiResponse) {}
 
     public function id(mixed $default = null): mixed
     {
